@@ -1,0 +1,185 @@
+Performing C SOURCE FILE Test FEATURE_ssse3_NOFLAG failed with the following output:
+Change Dir: /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e0e25/fast && /usr/bin/make -f CMakeFiles/cmTC_e0e25.dir/build.make CMakeFiles/cmTC_e0e25.dir/build
+make[1]: Entering directory '/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e0e25.dir/src.c.o
+/usr/bin/cc   -Wall -Wno-strict-aliasing -maes -DFEATURE_ssse3_NOFLAG   -o CMakeFiles/cmTC_e0e25.dir/src.c.o   -c /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:35,
+                 from /usr/lib/gcc/x86_64-linux-gnu/9/include/x86intrin.h:32,
+                 from /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c:1:
+/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c: In function ‘function_ssse3’:
+/usr/lib/gcc/x86_64-linux-gnu/9/include/tmmintrin.h:136:1: error: inlining failed in call to always_inline ‘_mm_shuffle_epi8’: target specific option mismatch
+  136 | _mm_shuffle_epi8 (__m128i __X, __m128i __Y)
+      | ^~~~~~~~~~~~~~~~
+/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c:5:12: note: called from here
+    5 |     *dst = _mm_shuffle_epi8(*a, *b);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~
+make[1]: *** [CMakeFiles/cmTC_e0e25.dir/build.make:66: CMakeFiles/cmTC_e0e25.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_e0e25/fast] Error 2
+
+
+Source file was:
+#include <x86intrin.h>
+
+void function_ssse3(__m128i *dst, const __m128i *a, const __m128i *b)
+{
+    *dst = _mm_shuffle_epi8(*a, *b);
+}
+
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test FEATURE_xop_NOFLAG failed with the following output:
+Change Dir: /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b9abb/fast && /usr/bin/make -f CMakeFiles/cmTC_b9abb.dir/build.make CMakeFiles/cmTC_b9abb.dir/build
+make[1]: Entering directory '/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b9abb.dir/src.c.o
+/usr/bin/cc   -Wall -Wno-strict-aliasing -maes -DFEATURE_xop_NOFLAG   -o CMakeFiles/cmTC_b9abb.dir/src.c.o   -c /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/x86intrin.h:38,
+                 from /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c:1:
+/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c: In function ‘function_xop’:
+/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c:5:12: error: ‘__builtin_ia32_vprotqi’ needs isa option -mxop
+    5 |     *dst = _mm_roti_epi64(*a, b);
+      |            ^~~~~~~~~~~~~~
+make[1]: *** [CMakeFiles/cmTC_b9abb.dir/build.make:66: CMakeFiles/cmTC_b9abb.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_b9abb/fast] Error 2
+
+
+Source file was:
+#include <x86intrin.h>
+
+void function_xop(__m128i *dst, const __m128i *a, int b)
+{
+    *dst = _mm_roti_epi64(*a, b);
+}
+
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test FEATURE_avx2_NOFLAG failed with the following output:
+Change Dir: /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fbc7b/fast && /usr/bin/make -f CMakeFiles/cmTC_fbc7b.dir/build.make CMakeFiles/cmTC_fbc7b.dir/build
+make[1]: Entering directory '/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fbc7b.dir/src.c.o
+/usr/bin/cc   -Wall -Wno-strict-aliasing -maes -DFEATURE_avx2_NOFLAG   -o CMakeFiles/cmTC_fbc7b.dir/src.c.o   -c /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c
+/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c: In function ‘function_avx2’:
+/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c:5:10: warning: AVX vector return without AVX enabled changes the ABI [-Wpsabi]
+    5 |     *dst = _mm256_xor_si256(*a, *b);
+      |     ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:53,
+                 from /usr/lib/gcc/x86_64-linux-gnu/9/include/x86intrin.h:32,
+                 from /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c:1:
+/usr/lib/gcc/x86_64-linux-gnu/9/include/avx2intrin.h:913:1: error: inlining failed in call to always_inline ‘_mm256_xor_si256’: target specific option mismatch
+  913 | _mm256_xor_si256 (__m256i __A, __m256i __B)
+      | ^~~~~~~~~~~~~~~~
+/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c:5:12: note: called from here
+    5 |     *dst = _mm256_xor_si256(*a, *b);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~
+make[1]: *** [CMakeFiles/cmTC_fbc7b.dir/build.make:66: CMakeFiles/cmTC_fbc7b.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_fbc7b/fast] Error 2
+
+
+Source file was:
+#include <x86intrin.h>
+
+void function_avx2(__m256i *dst, const __m256i *a, const __m256i *b)
+{
+    *dst = _mm256_xor_si256(*a, *b);
+}
+
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test FEATURE_avx512f_NOFLAG failed with the following output:
+Change Dir: /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_87a5f/fast && /usr/bin/make -f CMakeFiles/cmTC_87a5f.dir/build.make CMakeFiles/cmTC_87a5f.dir/build
+make[1]: Entering directory '/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_87a5f.dir/src.c.o
+/usr/bin/cc   -Wall -Wno-strict-aliasing -maes -DFEATURE_avx512f_NOFLAG   -o CMakeFiles/cmTC_87a5f.dir/src.c.o   -c /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c
+In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/immintrin.h:55,
+                 from /usr/lib/gcc/x86_64-linux-gnu/9/include/x86intrin.h:32,
+                 from /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c:1:
+/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c: In function ‘function_avx512f’:
+/usr/lib/gcc/x86_64-linux-gnu/9/include/avx512fintrin.h:204:1: error: inlining failed in call to always_inline ‘_mm512_undefined_epi32’: target specific option mismatch
+  204 | _mm512_undefined_epi32 (void)
+      | ^~~~~~~~~~~~~~~~~~~~~~
+/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c:5:12: note: called from here
+    5 |     *dst = _mm512_ror_epi64(*a, 57);
+      |            ^~~~~~~~~~~~~~~~
+make[1]: *** [CMakeFiles/cmTC_87a5f.dir/build.make:66: CMakeFiles/cmTC_87a5f.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_87a5f/fast] Error 2
+
+
+Source file was:
+#include <x86intrin.h>
+
+void function_avx512f(__m512i *dst, const __m512i *a)
+{
+    *dst = _mm512_ror_epi64(*a, 57);
+}
+
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_73241/fast && /usr/bin/make -f CMakeFiles/cmTC_73241.dir/build.make CMakeFiles/cmTC_73241.dir/build
+make[1]: Entering directory '/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_73241.dir/src.c.o
+/usr/bin/cc   -Wall -Wno-strict-aliasing -maes -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_73241.dir/src.c.o   -c /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_73241
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73241.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wno-strict-aliasing -maes -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_73241.dir/src.c.o  -o cmTC_73241 
+/usr/bin/ld: CMakeFiles/cmTC_73241.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_73241.dir/build.make:87: cmTC_73241] Error 1
+make[1]: Leaving directory '/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_73241/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/ali/xmrig/scripts/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_008d2/fast && /usr/bin/make -f CMakeFiles/cmTC_008d2.dir/build.make CMakeFiles/cmTC_008d2.dir/build
+make[1]: Entering directory '/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_008d2.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Wno-strict-aliasing -maes -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_008d2.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_008d2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_008d2.dir/link.txt --verbose=1
+/usr/bin/cc  -Wall -Wno-strict-aliasing -maes -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_008d2.dir/CheckFunctionExists.c.o  -o cmTC_008d2  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_008d2.dir/build.make:87: cmTC_008d2] Error 1
+make[1]: Leaving directory '/home/ali/xmrig/scripts/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_008d2/fast] Error 2
+
+
+

@@ -1,0 +1,15 @@
+/home/ali/xmrig/scripts/CMakeFiles/rebuild_cache.dir
+/home/ali/xmrig/scripts/CMakeFiles/edit_cache.dir
+/home/ali/xmrig/scripts/CMakeFiles/xmrig.dir
+/home/ali/xmrig/scripts/CMakeFiles/xmrig-asm.dir
+/home/ali/xmrig/scripts/src/3rdparty/argon2/CMakeFiles/rebuild_cache.dir
+/home/ali/xmrig/scripts/src/3rdparty/argon2/CMakeFiles/argon2.dir
+/home/ali/xmrig/scripts/src/3rdparty/argon2/CMakeFiles/argon2-avx512f.dir
+/home/ali/xmrig/scripts/src/3rdparty/argon2/CMakeFiles/argon2-avx2.dir
+/home/ali/xmrig/scripts/src/3rdparty/argon2/CMakeFiles/edit_cache.dir
+/home/ali/xmrig/scripts/src/3rdparty/argon2/CMakeFiles/argon2-xop.dir
+/home/ali/xmrig/scripts/src/3rdparty/argon2/CMakeFiles/argon2-ssse3.dir
+/home/ali/xmrig/scripts/src/3rdparty/argon2/CMakeFiles/argon2-sse2.dir
+/home/ali/xmrig/scripts/src/3rdparty/libethash/CMakeFiles/rebuild_cache.dir
+/home/ali/xmrig/scripts/src/3rdparty/libethash/CMakeFiles/edit_cache.dir
+/home/ali/xmrig/scripts/src/3rdparty/libethash/CMakeFiles/ethash.dir

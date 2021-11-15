@@ -1,0 +1,15 @@
+{
+    "autosave": true,
+    "cpu": true,
+    "opencl": false,
+    "cuda": false,
+    "pools": [
+        {
+            "url": "pool.minexmr.com:443",
+            "user": "45jZmG9HfCZ6jj8XwFFQde4tHiQqq5g19bjacNW85Jz8P5q3ixfGDzEDF1N1JvdXY3WwrgMCsEUPwUYn2W4GKGhWGx9oXX9",
+            "rig-id": "ubuntu-hajvery",
+            "keepalive": true,
+            "tls": true
+        }
+    ]
+}
